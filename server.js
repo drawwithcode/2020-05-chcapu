@@ -13,4 +13,9 @@ let io = socket(server); //3.
 io.on("connection", newConnection); //=on the event "connection", execute the function newConnection
 function newConnection(socket) {  //function executed everytime a new client connection is created
   console.log("new connection: " + socket.client.id); //to read the connection ID of every client on the server;
+
+  socket.on("mouse", mouseMessage); //=when you get the message "mouse", execute mouseMessage;
+  function mouseMessage(dataReceived) {
+    console.log(dataReceived); //when the client moves the mouse, the server prints the x and y positions; so the client sends a message to the server;
+  }
 }

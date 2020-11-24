@@ -16,3 +16,12 @@ function setup() {
 
 function draw() {
 }
+
+function mouseMoved() { //=when the mouse is moved...
+  ellipse(mouseX, mouseY, 20); //...a sketch happens on the client side...
+  let message = {
+    x: mouseX,
+    y: mouseY,
+  }; //..and a message..
+  socket.emit("mouse", message) //..is sent to the server, through my instance of socket.io..
+}
