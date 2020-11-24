@@ -6,6 +6,12 @@ function newConnection() {
   console.log("your id: " + socket.id);
 }
 
+socket.on("mouseBroadcast", drawOtherMouse); //=when another client broadcasts the mouse data, execute drawOtherMouse;
+function drawOtherMouse(data) { //data is the message of the mouse position sent from another client to the server and then broadcasted to the other clients;
+  fill("yellow");
+  ellipse(data.x, data.y, 20);
+}
+
 function preload(){
 }
 
@@ -18,6 +24,7 @@ function draw() {
 }
 
 function mouseMoved() { //=when the mouse is moved...
+  fill("white");
   ellipse(mouseX, mouseY, 20); //...a sketch happens on the client side...
   let message = {
     x: mouseX,

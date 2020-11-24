@@ -15,7 +15,8 @@ function newConnection(socket) {  //function executed everytime a new client con
   console.log("new connection: " + socket.client.id); //to read the connection ID of every client on the server;
 
   socket.on("mouse", mouseMessage); //=when you get the message "mouse", execute mouseMessage;
-  function mouseMessage(dataReceived) {
-    console.log(dataReceived); //when the client moves the mouse, the server prints the x and y positions; so the client sends a message to the server;
+  function mouseMessage(dataReceived) { //the mouseMessage function takes the received data and..
+    console.log(socket.client.id, dataReceived); //..prints it on the server side with the id of the client that sent the data.. (when the client moves the mouse, the server prints the x and y positions; so the client sends a message to the server);
+    socket.broadcast.emit("mouseBroadcast", dataReceived); //..and broadcasts to all the other connections, excluding the one that sent it.
   }
 }
