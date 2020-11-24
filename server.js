@@ -9,6 +9,7 @@ let server = app.listen(port); //1.
 app.use(express.static("public")); //2.send the public folder to the client
 let io = socket(server); //3.
 
+//print the connection on the server side
 io.on("connection", newConnection); //=on the event "connection", execute the function newConnection
 function newConnection(socket) {  //function executed everytime a new client connection is created
   console.log("new connection: " + socket.client.id); //to read the connection ID of every client on the server;
