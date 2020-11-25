@@ -27,7 +27,7 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
-  background("purple");
+  background("AliceBlue");
 }
 
 function draw() {
