@@ -18,6 +18,7 @@ function setColor(assignedColor) {  //(data from the message)
 socket.on("mouseBroadcast", drawOtherMouse); //=when another client broadcasts the mouse data, execute drawOtherMouse;
 function drawOtherMouse(data) { //data is the message of the mouse position sent from another client to the server and then broadcasted to the other clients;
   fill(data.color);
+  noStroke();
   ellipse(data.x, data.y, 20);
 }
 
@@ -35,6 +36,7 @@ function draw() {
 
 function mouseMoved() { //=when the mouse is moved...
   fill(myColor);
+  noStroke();
   ellipse(mouseX, mouseY, 20); //...a sketch happens on the client side...
   let message = {
     x: mouseX,
