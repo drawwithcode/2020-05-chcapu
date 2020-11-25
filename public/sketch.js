@@ -1,6 +1,12 @@
 let socket = io(); //4.load socket.io (that is in the index.html) for the client side;
 let myColor = "white";
 
+let easy;
+let lovey;
+let mad;
+let moody;
+let sick;
+
 //print the connection on the client side
 socket.on("connect", newConnection); //=when the "connect" message is received, execute the function newConnection;
 function newConnection() {
@@ -23,7 +29,12 @@ function drawOtherMouse(data) { //data is the message of the mouse position sent
 }
 
 
-function preload(){
+function preload() {
+  easy = loadImage("./assets/emojis/easy.png");
+  lovey = loadImage("./assets/emojis/lovey.png");
+  mad = loadImage("./assets/emojis/mad.png");
+  moody = loadImage("./assets/emojis/moody.png");
+  sick = loadImage("./assets/emojis/sick.png");
 }
 
 function setup() {
