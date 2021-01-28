@@ -51,7 +51,7 @@ function preload() {
   moody = loadImage("./assets/emojis/moody.png");
   sick = loadImage("./assets/emojis/sick.png");
 
-  jost = loadFont('./assets/Jost-regular.ttf');
+  jost = loadFont('./assets/Jost-Regular.ttf');
 }
 
 //broadcast other clients drawings and make them all hearts
