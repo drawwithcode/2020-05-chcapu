@@ -12,6 +12,8 @@ let sick;
 let myMood;
 let message;
 
+let jost;
+
 
 //print the connection on the client side
 socket.on("connect", newConnection); //=when the "connect" message is received, execute the function newConnection;
@@ -48,6 +50,8 @@ function preload() {
   mad = loadImage("./assets/emojis/mad.png");
   moody = loadImage("./assets/emojis/moody.png");
   sick = loadImage("./assets/emojis/sick.png");
+
+  jost = loadFont('assets/Jost-regular.ttf');
 }
 
 //broadcast other clients drawings and make them all hearts
@@ -66,7 +70,7 @@ function setup() {
   let intro = "Express your feelings, get nothing but love back!"
   fill(0);
   textSize(24);
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(intro,width/2,60);
   pop();
@@ -74,7 +78,7 @@ function setup() {
   push();
   let choice = "How do you feel today? [c]:🤙🏻 [v]:💜 [b]:😡 [n]:🌧 [m]:🦠";
   textSize(18);
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(choice,width/2,height-90);
   pop();
@@ -83,7 +87,7 @@ function setup() {
   let instruction = "CLICK AND DRAW, SOMEONE MIGHT REPLY...";
   textSize(11);
   fill("DodgerBlue");
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(instruction,width/2,height-50);
   pop();
@@ -150,7 +154,7 @@ function windowResized() {
   let intro = "Express your feelings, get nothing but love back!"
   fill(0);
   textSize(24);
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(intro,width/2,60);
   pop();
@@ -158,7 +162,7 @@ function windowResized() {
   push();
   let choice = "How do you feel today? [c]:🤙🏻 [v]:💜 [b]:😡 [n]:🌧 [m]:🦠";
   textSize(18);
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(choice,width/2,height-90);
   pop();
@@ -167,7 +171,7 @@ function windowResized() {
   let instruction = "CLICK AND DRAW, SOMEONE MIGHT REPLY...";
   textSize(11);
   fill("DodgerBlue");
-  textFont("Jost");
+  textFont(jost);
   textAlign(CENTER);
   text(instruction,width/2,height-50);
   pop();
