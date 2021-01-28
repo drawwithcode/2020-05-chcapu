@@ -78,7 +78,7 @@ function setup() {
   push();
   let choice = "How do you feel today? [c]:🤙🏻 [v]:💜 [b]:😡 [n]:🌧 [m]:🦠";
   textSize(18);
-  textFont(jost);
+  textFont("Jost");
   textAlign(CENTER);
   text(choice,width/2,height-90);
   pop();
